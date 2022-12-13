@@ -1,0 +1,112 @@
+.Section5 {
+  height: 600px;
+
+  .Switch {
+    display: flex;
+    flex-direction: column;
+
+    .Icons {
+      display: flex;
+      flex-direction: row;
+
+      > div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > button {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          background-color: transparent;
+          border: none;
+          padding: 0;
+          cursor: pointer;
+          user-select: none;
+
+          > svg {
+            height: 45px;
+            width: auto;
+          }
+
+          > div {
+            text-align: center;
+            font-family: "Aldrich";
+            font-size: 14px;
+            color: #3f6f8c;
+          }
+        }
+      }
+    }
+
+    .Line {
+      height: 10px;
+      position: relative;
+      margin-top: 10px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 4px;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: #3f6f8c;
+        z-index: 0;
+      }
+
+      > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        &::before {
+          content: "";
+          display: block;
+          height: 10px;
+          width: 10px;
+          border-radius: 5px;
+          background-color: #3f6f8c;
+        }
+      }
+      .CurrentDot,
+      .Dot {
+        transform: translateX(-50%);
+        z-index: 0;
+      }
+
+      .CurrentDot {
+      }
+    }
+  }
+
+  .ContentContainer {
+    position: relative;
+
+    > div {
+      position: absolute;
+      top: 0;
+      transition: opacity 0.3s;
+
+      > h2 {
+        margin: 0;
+        font-family: "Aldrich";
+        font-size: 42px;
+        color: #fff;
+      }
+
+      > p {
+        margin: 0;
+        font-family: "Poppins";
+        font-size: 16px;
+        color: #fff;
+      }
+    }
+  }
+}

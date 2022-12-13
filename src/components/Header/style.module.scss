@@ -1,0 +1,77 @@
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  box-shadow: none;
+  transition: all 0.2s ease-in;
+  box-sizing: border-box;
+  padding: 20px 40px;
+
+  @media (max-width: 1440px) {
+    padding: 10px 40px;
+  }
+
+  &[data-is-scrolled="true"] {
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+      rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+  }
+
+  .Start {
+    flex: 1;
+
+    .Logo {
+      display: flex;
+
+      > svg {
+        height: 60px;
+      }
+    }
+  }
+
+  .End {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+
+    .loginButton {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      user-select: none;
+      font-family: "Aldrich";
+      font-size: 16px;
+      color: #262626;
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      align-items: center;
+
+      > svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .MenuIcon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+
+      > svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

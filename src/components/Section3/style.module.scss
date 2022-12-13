@@ -1,0 +1,26 @@
+.Section3 {
+  height: 768px;
+  background-color: #fff;
+  padding: 60px 128px;
+
+  .Title {
+    font-family: "Aldrich";
+    font-size: 64px;
+    color: #262626;
+    margin: 0 0 45px;
+  }
+
+  .SmallLine {
+    width: 30px;
+    height: 2px;
+    border-radius: 1px;
+    background: linear-gradient(90deg, #fff, #848484);
+  }
+
+  .Content {
+    font-family: "Poppins";
+    font-size: 20px;
+    color: #9298a5;
+    margin: 10px 0 0;
+  }
+}

@@ -1,0 +1,85 @@
+.Footer {
+  > div:first-child {
+    display: flex;
+    flex-direction: row;
+    background-color: #242424;
+    color: #ffffff;
+    padding: 45px 100px;
+
+    .ContactUs {
+      flex: 1;
+
+      > h2 {
+        font-family: "Aldrich";
+        font-size: 30px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      > p {
+        font-family: "Poppins";
+        font-size: 14px;
+      }
+    }
+
+    .Links {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      > a {
+        font-family: "Aldrich";
+        font-size: 20px;
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  > div:last-child {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    background-color: white;
+    padding: 24px 150px;
+    color: #242424;
+    fill: #242424;
+
+    .Links {
+      flex: 3;
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
+
+      > a {
+        font-family: "Alatsi";
+        font-size: 16px;
+        color: #242424;
+        text-decoration: none;
+      }
+    }
+
+    .Copyrights {
+      flex: 1;
+      font-family: "Alatsi";
+      font-size: 11px;
+    }
+
+    .SocialMedia {
+      display: flex;
+      flex-direction: row;
+      gap: 2px;
+
+      > a {
+        display: flex;
+
+        > svg {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,200 @@
+.IntroSection {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  > div:first-child {
+    flex: 1;
+    background-image: url(../../assets/images/introductionSectionBG.png);
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    > div {
+      font-family: "Aldrich";
+      font-size: 48px;
+      margin-top: 15%;
+      text-align: center;
+
+      > span {
+        color: #e15c24;
+      }
+
+      @media (max-width: 1440px) {
+        margin-top: 12%;
+        font-size: 40px;
+      }
+    }
+
+    > img {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      z-index: 0;
+      transform: translateX(-50%);
+      width: auto;
+      height: 50%;
+    }
+
+    .AppButtonContainer {
+      position: absolute;
+      top: 100%;
+      margin-top: -47px;
+      z-index: 0;
+
+      > div:first-child {
+        position: relative;
+        display: flex;
+        width: 240px;
+        > svg {
+          position: absolute;
+          top: -6px;
+          right: -8px;
+          z-index: -1;
+        }
+      }
+
+      > div:nth-child(2) {
+        height: 94px;
+        width: 360px;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 0 0 120px;
+        transform: translateX(-120px);
+        background-color: #ffffff;
+
+        > a {
+          display: flex;
+          fill: #262626;
+          transition: fill 0.3s ease-in;
+
+          &:hover {
+            fill: #f7c4ad;
+          }
+
+          > svg {
+            width: 72px;
+            height: 72px;
+          }
+        }
+      }
+
+      .TryMessage {
+        margin-top: 10px;
+        width: 240px;
+        font-family: "Aldrich";
+        font-size: 16px;
+        color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+    }
+
+    .GenesisButtonContainer {
+      position: absolute;
+      top: 100%;
+      margin-top: -47px;
+      right: 5%;
+      z-index: 0;
+
+      > div:first-child {
+        position: relative;
+        display: flex;
+
+        > svg {
+          position: absolute;
+          z-index: -1;
+          top: 10px;
+          right: -9px;
+        }
+      }
+
+      > a:last-child {
+        height: 94px;
+        width: 475px;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease-in;
+        background-color: #ffffff;
+        color: #000000;
+        fill: #262626;
+        text-decoration: none;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        text-decoration: none;
+
+        > svg {
+          transition: fill 0.3s ease-in;
+        }
+
+        > div {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          font-family: "Aldrich";
+          transition: padding-top 0.3s ease-in;
+          padding-top: 5px;
+
+          > div:first-child {
+            font-size: 20px;
+            transition: all 0.3s ease-in;
+          }
+
+          > div:last-child {
+            font-size: 13px;
+            transition: all 0.3s ease-in;
+            color: #9298a5;
+          }
+        }
+
+        &:hover {
+          background-color: #000000;
+          fill: #ffffff;
+          color: #ffffff;
+          text-shadow: none;
+          text-decoration: underline;
+          text-decoration-thickness: 1px;
+
+          > div {
+            padding-top: 0;
+
+            > div:last-child {
+              color: #9298a5;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > div:last-child {
+    height: 110px;
+    box-sizing: border-box;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 1440px) {
+      height: 90px;
+      padding: 15px 0;
+    }
+
+    > img {
+      width: auto;
+      height: 100%;
+      object-fit: fill;
+      mix-blend-mode: lighten;
+    }
+  }
+}
