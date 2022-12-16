@@ -1,8 +1,8 @@
 import styles from "./style.module.scss";
-import CharactersImageSrc from "../../assets/images/characters.png";
-import MouseImageSrc from "../../assets/images/mouse.gif";
-import { ReactComponent as AppButtonBG } from "../../assets/images/appButtonBG.svg";
-import { ReactComponent as GenesisButtonBG } from "../../assets/images/genesisButtonBG.svg";
+import CharactersImageSrc from "../../assets/images/IntroSection/characters.png";
+import MouseImageSrc from "../../assets/images/IntroSection/mouse.gif";
+import { ReactComponent as AppButtonBG } from "../../assets/images/IntroSection/appButtonBG.svg";
+import { ReactComponent as GenesisButtonBG } from "../../assets/images/IntroSection/genesisButtonBG.svg";
 import { ReactComponent as AppleIcon } from "../../assets/icons/apple.svg";
 import { ReactComponent as AndroidIcon } from "../../assets/icons/android.svg";
 import { ReactComponent as ThreeDIcon } from "../../assets/icons/3d.svg";

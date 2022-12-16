@@ -1,4 +1,120 @@
 .Section4 {
-  height: 768px;
   background-color: #5a798f;
+  background-image: url(../../assets/images/Section4/BG.png);
+  background-repeat: no-repeat;
+  background-position: bottom -190px right -170px;
+  background-size: 987px auto;
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 34px 49px 41px 49px;
+
+    > div:first-child {
+      padding: 25px 0;
+      width: 100%;
+      max-width: 768px;
+      position: relative;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .SectionHeader {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+
+          > .Title {
+            margin: 0;
+            font-family: "Aldrich";
+            font-size: 67px;
+            color: #ffffff;
+          }
+
+          > .SubTitle {
+            font-family: "Aldrich";
+            font-size: 24px;
+            color: #ffffff;
+          }
+        }
+
+        > h2 {
+          margin: 42px 0 0;
+          font-family: "Aldrich";
+          font-size: 32px;
+          color: #f7c1ab;
+        }
+
+        > p {
+          margin: 21px 0;
+          font-family: "Poppins";
+          font-size: 16px;
+          color: #fdf9f9;
+        }
+
+        .Information {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 22px;
+          overflow: auto;
+          direction: rtl;
+          margin-left: -24px;
+          padding-left: 24px;
+
+          &::-webkit-scrollbar {
+            width: 4px;
+            border-radius: 2px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: #2424241a;
+            border-radius: 2px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: #474747;
+            border-radius: 2px;
+          }
+
+          > div {
+            direction: ltr;
+
+            .Title {
+              font-family: "Poppins";
+              font-size: 20px;
+              color: #f7c1ab;
+            }
+
+            .Description {
+              font-family: "Poppins";
+              font-size: 12px;
+              color: #fdf9f9;
+            }
+          }
+        }
+      }
+    }
+
+    > div:last-child {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      > div {
+        width: 346px;
+        height: 690px;
+        background-color: #3b5161e8;
+      }
+    }
+  }
 }
