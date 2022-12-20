@@ -1,4 +1,6 @@
 import styles from "./style.module.scss";
+import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 import FirstCardImageSrc from "../../assets/images/Section2/1.png";
 import SecondCardImageSrc from "../../assets/images/Section2/2.png";
 import ThirdCardImageSrc from "../../assets/images/Section2/3.png";
@@ -7,8 +9,19 @@ import { ReactComponent as SecondCardBG } from "../../assets/images/Section2/2BG
 import { ReactComponent as ThirdCardBG } from "../../assets/images/Section2/3BG.svg";
 
 export default function Section2() {
+  const [isViewed, setIsViewed] = useState(false);
+  const [inViewRef, inView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+    onChange: (inView) => inView && setIsViewed(true),
+  });
+
   return (
-    <div className={styles.Section2}>
+    <div
+      className={styles.Section2}
+      ref={inViewRef}
+      data-is-viewed={inView || isViewed}
+    >
       <div>
         <div>FEATURED NEWS</div>
       </div>

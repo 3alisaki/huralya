@@ -1,4 +1,10 @@
 import styles from "./style.module.scss";
+import { useState } from "react";
+import { useInView } from "react-intersection-observer";
+import { ReactComponent as CardBG } from "../../assets/images/Section4/cardBG.svg";
+import AvatarSrc from "../../assets/images/Section4/avatar.png";
+import { ReactComponent as AvatarBG } from "../../assets/images/Section4/avatarBG.svg";
+import { ReactComponent as InfoIcon } from "../../assets/icons/info.svg";
 
 const information = [
   {
@@ -144,8 +150,19 @@ const information = [
 ];
 
 export default function Section4() {
+  const [isViewed, setIsViewed] = useState(false);
+  const [inViewRef, inView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+    onChange: (inView) => inView && setIsViewed(true),
+  });
+
   return (
-    <div className={styles.Section4}>
+    <div
+      className={styles.Section4}
+      ref={inViewRef}
+      data-is-viewed={inView || isViewed}
+    >
       <div>
         <div>
           <div>
@@ -172,7 +189,53 @@ export default function Section4() {
           </div>
         </div>
         <div>
-          <div></div>
+          <div>
+            <div className={styles.CardBG}>
+              <CardBG />
+            </div>
+            <div>
+              <div className={styles.Avatar}>
+                <div>
+                  <img src={AvatarSrc} alt="Avatar" />
+                </div>
+                <div className={styles.AvatarBG}>
+                  <AvatarBG />
+                </div>
+              </div>
+              <div className={styles.Actions}>
+                <div>
+                  <button>Mint</button>
+                  <button>Market place</button>
+                </div>
+                <div>
+                  <InfoIcon /> Upcoming MINT on Mars-21-2023
+                </div>
+              </div>
+              <div className={styles.Details}>
+                <div className={styles.Detail}>
+                  <h3>Circulating Supply</h3>
+                  <div>1000</div>
+                </div>
+                <div className={styles.Detail}>
+                  <h3>next mint price</h3>
+                  <div>200 LYA</div>
+                </div>
+                <div className={styles.Detail}>
+                  <h3>Mrket floor price</h3>
+                  <div>250 LYA</div>
+                </div>
+                <div className={styles.Detail}>
+                  <h3>Blockchain</h3>
+                  <div>Polygan</div>
+                </div>
+                <div className={styles.Detail}>
+                  <h3>contract Address</h3>
+                  <div>0x60e...a7c6</div>
+                </div>
+                <div className={styles.Icons}></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,112 +1,343 @@
 .Section5 {
-  height: 600px;
+  padding: 95px 80px 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
 
-  .Switch {
-    display: flex;
-    flex-direction: column;
+  .Bg {
+    &::before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      content: "";
+      display: block;
+      width: 1000px;
+      height: 1000px;
+      background-color: #172c38;
+      transform: translate(65%, 65%) rotate(45deg);
+    }
+  }
 
-    .Icons {
+  > div:nth-child(2) {
+    flex: 1;
+    padding: 40px 40px 0;
+
+    .Switch {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
 
-      > div {
-        flex: 1;
+      .Icons {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        align-items: flex-end;
+        height: 142px;
+        padding-top: 20px;
 
-        > button {
+        > div {
+          flex: 1;
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 20px;
-          background-color: transparent;
-          border: none;
-          padding: 0;
-          cursor: pointer;
-          user-select: none;
 
-          > svg {
-            height: 45px;
-            width: auto;
-          }
+          > button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-          > div {
-            text-align: center;
-            font-family: "Aldrich";
-            font-size: 14px;
-            color: #3f6f8c;
+            > svg {
+              height: 44px;
+              width: auto;
+              fill: #3f6f8c;
+              margin: 0;
+              transition: fill 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                margin 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            > div {
+              font-family: "Aldrich";
+              font-size: 14px;
+              color: #3f6f8c;
+              height: 56px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              transition: color 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            &:disabled {
+              transform: translateY(-20px);
+
+              > svg {
+                fill: #f9b233;
+                margin: 21px 0;
+              }
+
+              > div {
+                color: #ffffff;
+              }
+            }
           }
         }
       }
-    }
 
-    .Line {
-      height: 10px;
-      position: relative;
-      margin-top: 10px;
+      .CurrentStepBorder {
+        position: relative;
 
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 4px;
-        left: 0;
-        height: 2px;
-        width: 100%;
-        background-color: #3f6f8c;
-        z-index: 0;
+        > div {
+          position: absolute;
+          bottom: 76px;
+          left: 0;
+          z-index: 0;
+          transition: left 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+
+          > svg {
+            width: 86px;
+            height: 86px;
+          }
+        }
       }
 
-      > div {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+      .Line {
+        height: 26px;
+        position: relative;
 
         &::before {
           content: "";
           display: block;
-          height: 10px;
-          width: 10px;
-          border-radius: 5px;
+          position: absolute;
+          top: 12px;
+          left: 20px;
+          right: 20px;
+          z-index: 0;
+          height: 2px;
           background-color: #3f6f8c;
+          border-radius: 1px;
+        }
+
+        > div {
+          position: absolute;
+          top: 8px;
+          left: 0;
+          z-index: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          transition: left 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+          > div {
+            height: 10px;
+            width: 10px;
+            border-radius: 5px;
+            background-color: #3f6f8c;
+          }
+
+          &[data-current="true"] {
+            top: 6px;
+
+            > div {
+              background-color: #e8862b;
+              height: 14px;
+              width: 14px;
+              border-radius: 7px;
+              position: relative;
+
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: -6px;
+                left: -6px;
+                z-index: 0;
+                height: 26px;
+                width: 26px;
+                border-radius: 13px;
+                box-sizing: border-box;
+                border: 2px solid #e9b233;
+              }
+
+              &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 6px;
+                left: 6px;
+                z-index: -1;
+                height: 40px;
+                width: 2px;
+                border-radius: 1px;
+                background-color: #e9b233;
+              }
+            }
+          }
         }
       }
-      .CurrentDot,
-      .Dot {
-        transform: translateX(-50%);
-        z-index: 0;
-      }
+    }
 
-      .CurrentDot {
+    .ContentContainer {
+      position: relative;
+
+      > div {
+        position: absolute;
+        top: 0;
+        transition: opacity 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        > h2 {
+          margin: 50px 0 16px;
+          font-family: "Aldrich";
+          font-size: 42px;
+          color: #ffffff;
+        }
+
+        > p {
+          margin: 0;
+          font-family: "Poppins";
+          font-size: 16px;
+          line-height: 24px;
+          color: #ffffff;
+        }
       }
     }
   }
 
-  .ContentContainer {
-    position: relative;
+  > div:nth-child(3) {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
 
-    > div {
-      position: absolute;
-      top: 0;
-      transition: opacity 0.3s;
+    .TheLyaToken {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      user-select: none;
+
+      > div:first-child {
+        font-family: "Alatsi";
+        font-size: 52px;
+        line-height: 37px;
+        color: #ffffff;
+        height: 120px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+      }
+
+      > div:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        > div:last-child {
+          font-family: "Alatsi";
+          font-size: 32px;
+          line-height: 23px;
+          color: #ffffff;
+        }
+      }
+    }
+
+    .Exchanges {
+      width: 100%;
 
       > h2 {
-        margin: 0;
         font-family: "Aldrich";
-        font-size: 42px;
-        color: #fff;
+        font-size: 32px;
+        color: #ffffff;
       }
 
-      > p {
-        margin: 0;
-        font-family: "Poppins";
-        font-size: 16px;
-        color: #fff;
+      > div {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        > div {
+          flex: 1;
+          font-family: "Alatsi";
+          font-size: 14px;
+          color: #fddfc1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 40px;
+          border-radius: 20px;
+          box-sizing: border-box;
+          border: 1px solid #fddfc1;
+          padding: 0 10px;
+        }
       }
+    }
+
+    .ContractAddress {
+      width: 100%;
+
+      > h2 {
+        font-family: "Aldrich";
+        font-size: 32px;
+        color: #ffffff;
+      }
+
+      > div {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        > div {
+          min-width: 140px;
+          font-family: "Alatsi";
+          font-size: 14px;
+          color: #fddfc1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 40px;
+          border-radius: 20px;
+          box-sizing: border-box;
+          border: 1px solid #fddfc1;
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+// View Transitions
+.Section5 {
+  .Bg::before {
+    transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  }
+
+  > div {
+    transition: transform 1.5s, opacity 1.5s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  }
+
+  &[data-is-viewed="false"] {
+    .Bg::before {
+      transform: translate(65%, 65%) rotate(45deg) translateX(80%);
+    }
+
+    > div:nth-child(2) {
+      transform: translateX(-80%);
+      opacity: 0;
+    }
+
+    > div:nth-child(3) {
+      transform: translateX(80%);
+      opacity: 0;
     }
   }
 }

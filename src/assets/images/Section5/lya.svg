@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 190 120" width="190" height="120">
+  <defs>
+    <linearGradient id="lyaLinearGradientA" x1=".474" x2=".615" y1="-.165" y2=".997">
+      <stop stop-color="#F9B233"/>
+      <stop offset=".507" stop-color="#F9B233"/>
+      <stop offset="1" stop-color="#E94E1B"/>
+    </linearGradient>
+    <linearGradient id="lyaLinearGradientB" x1=".06" x2=".935" y1="-.383" y2="1.383">
+      <stop stop-color="#2D2E83"/>
+      <stop offset=".452" stop-color="#1D71B8"/>
+      <stop offset="1" stop-color="#1D71B8"/>
+    </linearGradient>
+    <linearGradient id="lyaLinearGradientC" x1=".131" x2="1.047" y1=".735" y2=".298">
+      <stop stop-color="#F9B233"/>
+      <stop offset=".455" stop-color="#F9B233"/>
+      <stop offset="1" stop-color="#E94E1B"/>
+    </linearGradient>
+    <linearGradient id="lyaLinearGradientD" x1="-.116" x2="1.006" y1=".738" y2=".16">
+      <stop stop-color="#E94E1B"/>
+      <stop offset=".102" stop-color="#F39200"/>
+      <stop offset=".422" stop-color="#F39200"/>
+      <stop offset=".733" stop-color="#F39200"/>
+      <stop offset="1" stop-color="#E94E1B"/>
+    </linearGradient>
+    <linearGradient id="lyaLinearGradientE" x1=".237" x2=".622" y1=".396" y2=".591">
+      <stop stop-color="#F39200"/>
+      <stop offset=".262" stop-color="#F39200"/>
+      <stop offset=".92" stop-color="#E94E1B"/>
+      <stop offset="1" stop-color="#E94E1B"/>
+    </linearGradient>
+    <linearGradient id="lyaLinearGradientF" x1="-.083" x2=".888" y1=".291" y2=".633">
+      <stop stop-color="#F9B233"/>
+      <stop offset=".631" stop-color="#F9B233"/>
+      <stop offset="1" stop-color="#E6332A"/>
+    </linearGradient>
+    <linearGradient id="lyaLinearGradientG" x1=".595" x2=".343" y1="-.052" y2=".957">
+      <stop stop-color="#E94E1B"/>
+      <stop offset="1" stop-color="#F39200"/>
+    </linearGradient>
+    <linearGradient id="lyaLinearGradientH" x1=".953" x2=".053" y1=".761" y2="-.226">
+      <stop stop-color="#E94E1B"/>
+      <stop offset="1" stop-color="#F9B233"/>
+    </linearGradient>
+  </defs>
+  <path fill="#fff" d="M31 105v15H0V60h16v45h15Zm79 15H94l-9-24-10 24H60l25-60 8 18 17 42ZM60 60h16l-25 60H35l8-19-17-41h15l9 24"/>
+  <path fill="url(#lyaLinearGradientA)" d="M164.71 38.295c-.486-.171-.962-.37-1.426-.596.557 1.004 1.239 1.934 2.031 2.765 1.363 1.434 3.028 2.546 4.873 3.257 1.435.014 2.818-.533 3.855-1.525 1.311-1.249 1.926-3.061 1.646-4.85-3.356 1.872-7.353 2.217-10.98.947l.001.001v.001Z" transform="translate(-279.386627 -69.290085) scale(2.252238)"/>
+  <path fill="url(#lyaLinearGradientB)" d="M158.76 45.521h.088c-.071-.023-.142-.043-.215-.06l.127.06Z" transform="translate(-279.386627 -69.290085) scale(2.252238)"/>
+  <path fill="url(#lyaLinearGradientC)" d="m160.67 41.358 1.041 4.145-4.193-.644c1.061.32 2.085 2.08 2.45 3.235l-5.852-.831c-1.059-.193-1.93.833-1.568 1.848.173.483.597.833 1.104.911l4.686.635c.62.104 1.225.256 1.811.454 4.424 2.066 7.408 10.355 7.408 10.355l.098-6.276 1.864.01 5.932-5.441.267-6.87-7.941-2.147-7.107.616Z" transform="translate(-279.386627 -69.290085) scale(2.252238)"/>
+  <path fill="url(#lyaLinearGradientD)" d="M189.675 40.881c-2.008 13.599-7.158 13.69-7.158 13.69l-.36.828c8.28 1.832 10.966-5.588 15.301-12.992 4.336-7.404 10.951-7.978 10.951-7.978-2.729-1.22-6.923-3.663-10.694-3.663-3.638 0-6.883 2.275-8.04 10.116v-.001Z" transform="translate(-279.386627 -69.290085) scale(2.252238)"/>
+  <path fill="url(#lyaLinearGradientE)" d="M189.733 40.878c-1.438 9.744-4.49 12.554-6.105 13.363 1.428-.161 5.747-1.63 9.52-13.01 2.67-8.05 6.516-9.804 10.35-9.098-1.856-.76-3.843-1.368-5.724-1.368-3.639 0-6.883 2.274-8.04 10.114h-.001v-.001Z" transform="translate(-279.386627 -69.290085) scale(2.252238)"/>
+  <path fill="url(#lyaLinearGradientF)" d="M173.07 45.71c-5.199 1.38-8.136 7.32-6.557 13.263l2.276 5.505 5.818 14.684c1.456-.976 2.031-2.837 1.38-4.465l-2.012-5.46c1.84.8 3.868 1.015 5.857.485 5.204-1.38 7.095-9.81 5.517-15.753-1.355-5.103-5.597-8.548-10.063-8.548-.748 0-1.493.097-2.216.289Z" transform="translate(-279.386627 -69.290085) scale(2.252238)"/>
+  <path fill="url(#lyaLinearGradientG)" d="M153.574 39.968c.646 2.072 2.056 3.82 3.944 4.89 4.348 2.472 9.88.712 12-3.818-.642-.547-1.335-1.032-2.069-1.449-2.014-1.149-4.293-1.753-6.612-1.753-2.569 0-5.097.74-7.263 2.13Z" transform="translate(-279.386627 -69.290085) scale(2.252238)"/>
+  <path fill="url(#lyaLinearGradientH)" d="M153.557 39.999c.012.052.026.102.042.152 3.346-2.235 7.695-2.584 11.307-.53.592.336 1.149.729 1.663 1.175l2.852 2.276c.62.353 1.274.641 1.953.858.094.026.189.049.285.07h.007c.142.022.283.047.424.08 2.796.42 5.74-.956 7.277-3.659.42-.737.713-1.54.864-2.375-3.441 2.863-8.304 3.512-12.277 1.253l-1.476-.825c-.534-.338-1.099-.625-1.688-.856-1.182-.467-2.442-.705-3.713-.704-2.738 0-5.454 1.09-7.52 3.084v.001Z" transform="translate(-279.386627 -69.290085) scale(2.252238)"/>
+  <path fill="#000" d="M85.53899166 19.78142342c-.75449973-.19369246-1.53152184-.29729541-2.31079618-.3085566-1.48647708-.02252238-2.90313479.29279094-4.1666403.87386834l-1.09233543-1.13287571c2.4954797-.84458925 5.2274444-.6396356 7.56977191.56756397Z"/>
+</svg>
