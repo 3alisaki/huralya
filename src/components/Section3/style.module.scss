@@ -23,6 +23,41 @@
     color: #9298a5;
     margin: 10px 0 0;
   }
+
+  .SocialMediaContainer {
+    display: inline-flex;
+    flex-direction: row;
+    height: 44px;
+
+    &::before {
+      content: "";
+      display: block;
+      border-left: 5px solid transparent;
+      border-top: 22px solid transparent;
+      border-right: 5px solid #f7c1ab;
+      border-bottom: 22px solid #f7c1ab;
+    }
+
+    .SocialMedia {
+      display: flex;
+      flex-direction: row;
+      gap: 2px;
+      align-items: center;
+      padding-left: 0;
+      padding-right: 10px;
+      background-color: #f7c1ab;
+
+      > a {
+        display: flex;
+
+        > svg {
+          width: 28px;
+          height: 28px;
+          fill: #fff;
+        }
+      }
+    }
+  }
 }
 
 // View Transitions

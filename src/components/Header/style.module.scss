@@ -5,72 +5,189 @@
   right: 0;
   width: 100%;
   z-index: 1000;
-  display: flex;
-  flex-direction: row;
   background-color: transparent;
   box-shadow: none;
   transition: all 0.2s ease-in;
   box-sizing: border-box;
-  padding: 20px 40px;
 
-  @media (max-width: 1440px) {
-    padding: 10px 40px;
-  }
-
-  &[data-is-scrolled="true"] {
+  &[data-is-scrolled="true"],
+  &[data-is-menu-open="true"] {
     background-color: #ffffff;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
-      rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
   }
 
-  .Start {
-    flex: 1;
-
-    .Logo {
-      display: flex;
-
-      > svg {
-        height: 60px;
-      }
-    }
-  }
-
-  .End {
+  .HeaderContent {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    align-items: center;
+    padding: 20px 40px;
 
-    .loginButton {
-      background-color: transparent;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      user-select: none;
-      font-family: "Aldrich";
-      font-size: 16px;
-      color: #262626;
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-      align-items: center;
+    @media (max-width: 1440px) {
+      padding: 10px 40px;
+    }
 
-      > svg {
-        width: 24px;
-        height: 24px;
+    @media (max-width: 1350px) {
+      padding: 10px 20px;
+    }
+
+    .Start {
+      flex: 1;
+
+      .Logo {
+        display: flex;
+
+        > svg {
+          height: 50px;
+
+          @media (max-width: 1350px) {
+            height: 40px;
+          }
+        }
       }
     }
 
-    .MenuIcon {
+    .End {
       display: flex;
+      flex-direction: row;
+      gap: 10px;
       align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
 
-      > svg {
-        width: 24px;
-        height: 24px;
+      .LoginButton {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        font-family: "Aldrich";
+        font-size: 16px;
+        color: #262626;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        align-items: center;
+        text-decoration: none;
+
+        > svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      .MenuButton {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+
+        .MenuIcon {
+          width: 24px;
+          height: 24px;
+          position: relative;
+          z-index: 0;
+
+          > div {
+            width: 18px;
+            height: 2px;
+            background-color: #000000;
+            position: absolute;
+            z-index: 0;
+            transform-origin: left center;
+            transition: all 0.3s ease-in;
+
+            &:nth-child(1) {
+              left: 3px;
+              top: 6px;
+            }
+
+            &:nth-child(2) {
+              left: 3px;
+              top: 11px;
+            }
+
+            &:nth-child(3) {
+              left: 3px;
+              top: 16px;
+            }
+          }
+
+          &[data-is-menu-open="true"] {
+            > div {
+              &:nth-child(1) {
+                transform: translateX(1px) rotate(45deg) translateY(-2px);
+              }
+
+              &:nth-child(2) {
+                opacity: 0;
+              }
+
+              &:nth-child(3) {
+                transform: translateX(1px) rotate(-45deg) translateY(2px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .Menu {
+    width: 100%;
+    transition: all 0.2s ease-in;
+    border-top: 1px solid #eee;
+    overflow: hidden;
+
+    @media (min-width: 1351px) {
+      height: 60px;
+    }
+
+    > ul {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      box-sizing: border-box;
+      padding: 0 15px;
+
+      @media (max-width: 1350px) {
+        flex-direction: column;
+        gap: 0px;
+        padding: 10px 0;
+      }
+
+      > li {
+        > a {
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+          align-items: center;
+          padding: 10px 15px;
+          text-decoration: none;
+          color: #000000;
+
+          > svg {
+            height: 15px;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  &:not([data-is-menu-open="true"]) {
+    .Menu {
+      opacity: 0;
+      height: 0;
+      border-top-width: 0;
+
+      @media (max-width: 1350px) {
+        display: none;
       }
     }
   }

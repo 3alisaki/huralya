@@ -159,19 +159,20 @@ export default function Section4() {
 
   return (
     <div
+      id="InsigniaNFT"
       className={styles.Section4}
       ref={inViewRef}
       data-is-viewed={inView || isViewed}
     >
       <div>
         <div>
+          <h1>Smart Investment...</h1>
           <div>
-            <div className={styles.SectionHeader}>
-              <h1 className={styles.Title}>Smart Investment...</h1>
-              <div className={styles.SubTitle}>
-                Squirrel NFTs are a way to invest on Huralya
-              </div>
-            </div>
+            Squirrel NFTs are a way to invest on Huralya
+          </div>
+        </div>
+        <div>
+          <div>
             <h2>Squirrel plan</h2>
             <p>
               The mint price of Squirrel nfts increases by 100 lya every month,
@@ -196,7 +197,7 @@ export default function Section4() {
             <div>
               <div className={styles.Avatar}>
                 <div>
-                  <img src={AvatarSrc} alt="Avatar" />
+                  <img src={AvatarSrc} alt="Avatar" width={579} height={562} />
                 </div>
                 <div className={styles.AvatarBG}>
                   <AvatarBG />

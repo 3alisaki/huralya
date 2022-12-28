@@ -69,7 +69,9 @@ export default function Section2() {
               <h3>market launch</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et
-                massa mi.. nsectetur adipiscing e
+                massa mi..
+                <br />
+                nsectetur adipiscing e
               </p>
             </div>
           </div>

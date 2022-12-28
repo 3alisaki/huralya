@@ -1,6 +1,11 @@
 import styles from "./style.module.scss";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { ReactComponent as TelegramIcon } from "../../assets/images/Section3/telegram.svg";
+import { ReactComponent as TwitterIcon } from "../../assets/images/Section3/twitter.svg";
+import { ReactComponent as DiscordIcon } from "../../assets/images/Section3/discord.svg";
+import { ReactComponent as RedditIcon } from "../../assets/images/Section3/reddit.svg";
+import { ReactComponent as GithubIcon } from "../../assets/images/Section3/github.svg";
 import { ReactComponent as OneIcon } from "../../assets/icons/1.svg";
 import { ReactComponent as TwoIcon } from "../../assets/icons/2.svg";
 import { ReactComponent as ThreeIcon } from "../../assets/icons/3.svg";
@@ -17,6 +22,7 @@ export default function Section3() {
 
   return (
     <div
+      id="AboutUs"
       className={styles.Section3}
       ref={inViewRef}
       data-is-viewed={inView || isViewed}
@@ -33,6 +39,25 @@ export default function Section3() {
         and adaptive platform, specially built for developers to help them
         develop, publish and support their monetization system for their games.
       </p>
+      <div className={styles.SocialMediaContainer}>
+        <div className={styles.SocialMedia}>
+          <a href="https://www.google.com">
+            <TelegramIcon />
+          </a>
+          <a href="https://www.google.com">
+            <TwitterIcon />
+          </a>
+          <a href="https://www.google.com">
+            <DiscordIcon />
+          </a>
+          <a href="https://www.google.com">
+            <RedditIcon />
+          </a>
+          <a href="https://www.google.com">
+            <GithubIcon />
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

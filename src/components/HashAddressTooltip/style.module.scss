@@ -1,0 +1,72 @@
+.HashAddressTooltip {
+  z-index: 9;
+  width: 320px;
+
+  &[data-static-side="top"]::before,
+  &[data-static-side="bottom"]::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+  }
+
+  &[data-static-side="top"]::before {
+    margin-top: -6px;
+  }
+
+  &[data-static-side="bottom"]::after {
+    margin-bottom: -6px;
+  }
+
+  .HashAddressTooltipContent {
+    background: #fddfc1;
+    color: #242424;
+    border-radius: 16px;
+    box-sizing: border-box;
+    padding: 6px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .HashAddress {
+      flex: 1;
+      z-index: 9;
+      position: relative;
+      padding: 0 6px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .CopyIcon {
+      width: 20px;
+      height: 20px;
+      margin: -6px 0;
+      fill: #242424;
+      cursor: pointer;
+    }
+
+    .MetaMaskFoxIcon {
+      width: 26px;
+      height: 26px;
+      margin: -3px 0;
+    }
+  }
+
+  .Arrow {
+    position: absolute;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent;
+
+    &[data-static-side="top"] {
+      border-top-width: 0;
+      border-bottom-color: #fddfc1;
+    }
+
+    &[data-static-side="bottom"] {
+      border-bottom-width: 0;
+      border-top-color: #fddfc1;
+    }
+  }
+}

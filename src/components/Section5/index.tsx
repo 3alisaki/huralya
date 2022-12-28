@@ -5,6 +5,7 @@ import { ReactComponent as TradeIcon } from "../../assets/icons/trade.svg";
 import { ReactComponent as DocumentIcon } from "../../assets/icons/document.svg";
 import { ReactComponent as LyaImgae } from "../../assets/images/Section5/lya.svg";
 import { ReactComponent as CurrentStepBorder } from "../../assets/images/Section5/currentStep.svg";
+import HashAddressTooltip from "../HashAddressTooltip";
 
 const steps = [
   {
@@ -50,12 +51,20 @@ export default function Section5() {
 
   return (
     <div
+      id="LyaToken"
       className={styles.Section5}
       ref={inViewRef}
       data-is-viewed={inView || isViewed}
     >
       <div className={styles.Bg}>
         <div />
+      </div>
+      <div>
+        <div>THE</div>
+        <div>
+          <LyaImgae />
+          <div>TOKEN</div>
+        </div>
       </div>
       <div>
         <div className={styles.Switch}>
@@ -113,7 +122,7 @@ export default function Section5() {
           {steps.map(({ title, desctiption }, index) => (
             <div
               key={index}
-              style={{ opacity: index === currentStepIndex ? 1 : 0 }}
+              data-current={index === currentStepIndex}
               ref={(element) => {
                 stepsContentRef.current[index] = element;
               }}
@@ -132,13 +141,6 @@ export default function Section5() {
         </div>
       </div>
       <div>
-        <div className={styles.TheLyaToken}>
-          <div>THE</div>
-          <div>
-            <LyaImgae />
-            <div>TOKEN</div>
-          </div>
-        </div>
         <div className={styles.Exchanges}>
           <h2>Exchanges</h2>
           <div>
@@ -150,8 +152,12 @@ export default function Section5() {
         <div className={styles.ContractAddress}>
           <h2>Contract Address</h2>
           <div>
-            <div>polygan</div>
-            <div>SmartChain</div>
+            <HashAddressTooltip hashAddress="0x3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy">
+              polygan
+            </HashAddressTooltip>
+            <HashAddressTooltip hashAddress="0x3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy">
+              SmartChain
+            </HashAddressTooltip>
           </div>
         </div>
       </div>
