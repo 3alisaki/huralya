@@ -1,4 +1,5 @@
 import styles from "./style.module.scss";
+import { ReactComponent as MobileFrameImage } from "../../assets/images/Section1/mobileFrame.svg";
 import GameplayImageSrc from "../../assets/images/Section1/gameplay.gif";
 
 export default function Section1() {
@@ -10,11 +11,8 @@ export default function Section1() {
       <div>
         <div className={styles.Pad} />
         <div className={styles.GameplayContainer}>
+          <MobileFrameImage />
           <img src={GameplayImageSrc} alt="Gameplay" />
-          <div className={styles.HomeBar} />
-          <div className={styles.DynamicIsland}>
-            <div className={styles.Camera} />
-          </div>
         </div>
         <div className={styles.Tags}>
           <div>#MMORPG</div>

@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { ReactComponent as TradeIcon } from "../../assets/icons/trade.svg";
 import { ReactComponent as DocumentIcon } from "../../assets/icons/document.svg";
@@ -47,7 +47,6 @@ export default function Section5() {
   const [dots, setDots] = useState(
     steps.map((_, index) => ({ belongsTo: index }))
   );
-  const stepsContentRef = useRef<(HTMLParagraphElement | null)[]>([]);
 
   return (
     <div
@@ -123,9 +122,6 @@ export default function Section5() {
             <div
               key={index}
               data-current={index === currentStepIndex}
-              ref={(element) => {
-                stepsContentRef.current[index] = element;
-              }}
             >
               <h2>{title}</h2>
               <p>

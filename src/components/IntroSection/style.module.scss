@@ -1,7 +1,10 @@
 .IntroSection {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+
+  @media (min-width: 1351px) {
+    min-height: 100vh;
+  }
 
   > div:first-child {
     flex: 1;
@@ -11,6 +14,10 @@
     display: flex;
     flex-direction: column;
     position: relative;
+
+    @media (max-width: 1350px) {
+      min-height: 100vh;
+    }
 
     > div {
       font-family: "Aldrich";
@@ -45,25 +52,24 @@
 
   > div:last-child {
     .Buttons {
+      position: relative;
+      z-index: 0;
+      
+      @media (max-width: 1350px) {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 20px;
+        gap: 40px;
+      }
+
       .AppButtonContainer {
-        position: absolute;
-        margin-top: -47px;
-        z-index: 0;
-
-        > div:first-child {
-          position: relative;
-          display: flex;
-          width: 240px;
-
-          > svg {
-            position: absolute;
-            top: -6px;
-            right: -8px;
-            z-index: -1;
-          }
+        @media (min-width: 1351px) {
+          position: absolute;
+          margin-top: -47px;
+          z-index: 0;
         }
 
-        > div:nth-child(2) {
+        > div:first-child {
           height: 94px;
           width: 360px;
           display: flex;
@@ -72,9 +78,32 @@
           justify-content: center;
           align-items: center;
           box-sizing: border-box;
-          padding: 0 0 0 120px;
-          transform: translateX(-120px);
           background-color: #ffffff;
+          position: relative;
+
+          @media (min-width: 1351px) {
+            transform: translateX(-120px);
+            padding: 0 0 0 120px;
+          }
+
+          @media (max-width: 1350px) {
+            height: 80px;
+            width: 100%;
+          }
+
+          > svg:first-child {
+            position: absolute;
+            z-index: -1;
+            top: -6px;
+            right: -8px;
+            width: 100%;
+            height: 100%;
+
+            @media (max-width: 1350px) {
+              top: -6px;
+              right: -5px;
+            }
+          }
 
           > a {
             display: flex;
@@ -88,6 +117,11 @@
             > svg {
               width: 72px;
               height: 72px;
+
+              @media (max-width: 1350px) {
+                width: 54px;
+                height: 54px;
+              }
             }
           }
         }
@@ -101,28 +135,22 @@
           display: flex;
           flex-direction: row;
           justify-content: flex-end;
+
+          @media (max-width: 1350px) {
+            width: 100%;
+          }
         }
       }
 
       .GenesisButtonContainer {
-        position: absolute;
-        margin-top: -47px;
-        right: 5%;
-        z-index: 0;
-
-        > div:first-child {
-          position: relative;
-          display: flex;
-
-          > svg {
-            position: absolute;
-            z-index: -1;
-            top: 10px;
-            right: -9px;
-          }
+        @media (min-width: 1351px) {
+          position: absolute;
+          margin-top: -47px;
+          right: 5%;
+          z-index: 0;
         }
 
-        > a:last-child {
+        > a {
           height: 94px;
           width: 475px;
           display: flex;
@@ -137,9 +165,25 @@
           text-decoration: none;
           text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           text-decoration: none;
+          position: relative;
 
-          > svg {
-            transition: fill 0.3s ease-in;
+          @media (max-width: 1350px) {
+            height: 80px;
+            width: 100%;
+          }
+
+          > svg:first-child {
+            position: absolute;
+            z-index: -1;
+            top: 10px;
+            right: -9px;
+            width: 100%;
+            height: 100%;
+
+            @media (max-width: 1350px) {
+              top: 6px;
+              right: -5px;
+            }
           }
 
           > div {
@@ -153,12 +197,30 @@
             > div:first-child {
               font-size: 20px;
               transition: all 0.3s ease-in;
+
+              @media (max-width: 1350px) {
+                font-size: 16px;
+              }
             }
 
             > div:last-child {
               font-size: 13px;
               transition: all 0.3s ease-in;
               color: #9298a5;
+
+              @media (max-width: 1350px) {
+                font-size: 10px;
+              }
+            }
+          }
+
+          > svg:last-child {
+            transition: fill 0.3s ease-in;
+            height: 27px;
+            width: auto;
+
+            @media (max-width: 1350px) {
+              height: 24px;
             }
           }
 

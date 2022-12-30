@@ -21,8 +21,6 @@ export default function IntroSection() {
           <div className={styles.AppButtonContainer}>
             <div>
               <AppButtonBG />
-            </div>
-            <div>
               <a
                 href="https://island3d.vercel.app/"
                 target="_blank"
@@ -41,14 +39,12 @@ export default function IntroSection() {
             <div className={styles.TryMessage}>TRY FREE</div>
           </div>
           <div className={styles.GenesisButtonContainer}>
-            <div>
-              <GenesisButtonBG />
-            </div>
             <a
               href="https://island3d.vercel.app/"
               target="_blank"
               rel="noreferrer"
             >
+              <GenesisButtonBG />
               <div>
                 <div>Explore the genesis</div>
                 <div>The first creation of Huralya</div>

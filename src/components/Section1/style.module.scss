@@ -4,12 +4,15 @@
 
   @media (max-width: 1350px) {
     flex-direction: column;
+    padding-top: 30px;
   }
 
   > div:nth-child(1) {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #ffffff;
+    font-family: "Aldrich";
 
     @media (min-width: 1351px) {
       width: 80px;
@@ -18,10 +21,14 @@
         transform: rotate(180deg);
         writing-mode: vertical-rl;
         text-orientation: mixed;
-        font-family: "Aldrich";
         font-size: 16px;
-        color: #ffffff;
       }
+    }
+
+    @media (max-width: 1350px) {
+      margin-bottom: 30px;
+      font-size: 20px;
+      font-weight: 400;
     }
   }
 
@@ -41,55 +48,41 @@
     }
 
     .GameplayContainer {
-      height: 391px;
-      width: 845px;
       display: flex;
-      border-radius: 54px;
-      border: 1px solid #f8f3f3;
       position: relative;
+      z-index: 0;
+      margin: 0 30px;
+      border: 1px solid #f8f3f3;
+      border-radius: 54px;
+      overflow: hidden;
+
+      @media (max-width: 640px) {
+        border-radius: 48px;
+      }
+
+      @media (max-width: 512px) {
+        border-radius: 32px;
+      }
+
+      @media (max-width: 448px) {
+        border-radius: 24px;
+      }
+
+      > svg {
+        width: 100%;
+        height: auto;
+      }
 
       > img {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 54px;
-        border: 1px solid #f8f3f3;
-      }
-
-      .HomeBar {
-        position: absolute;
-        left: 50%;
-        bottom: 10px;
-        z-index: 0;
-        transform: translateX(-50%);
-        width: 309px;
-        height: 5px;
-        border-radius: 2.5px;
-        background-color: #ffffff47;
-      }
-
-      .DynamicIsland {
-        background-color: #000000;
-        border-radius: 17.5px;
-        position: absolute;
-        left: 12px;
-        top: 50%;
-        z-index: 0;
-        transform: translateY(-50%);
-        width: 35px;
-        height: 124px;
-        box-sizing: border-box;
-        padding: 34px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .Camera {
-          width: 6px;
-          height: 6px;
-          border-radius: 3px;
-          background-color: #6669665c;
-        }
       }
     }
 
