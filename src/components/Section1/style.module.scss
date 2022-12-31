@@ -1,6 +1,7 @@
 .Section1 {
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 
   @media (max-width: 1350px) {
     flex-direction: column;

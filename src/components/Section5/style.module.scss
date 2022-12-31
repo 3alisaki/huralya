@@ -114,10 +114,9 @@
         flex-direction: row;
         align-items: flex-end;
         height: 142px;
-        padding-top: 20px;
 
         @media (max-width: 1350px) {
-          padding: 0;
+          height: 115px;
         }
 
         > div {
@@ -167,14 +166,18 @@
             }
 
             &:disabled {
-              transform: translateY(-20px);
+              transform: translateY(-27px);
+
+              @media (max-width: 1350px) {
+                transform: translateY(-19px);
+              }
 
               > svg {
                 fill: #f9b233;
                 margin: 21px 0;
 
                 @media (max-width: 1350px) {
-                  margin: 17px 0;
+                  margin: 15px 0;
                 }
               }
 
@@ -191,7 +194,7 @@
 
         > div {
           position: absolute;
-          bottom: 76px;
+          bottom: 83px;
           left: 0;
           z-index: 0;
           transition: left 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -200,7 +203,7 @@
           justify-content: center;
 
           @media (max-width: 1350px) {
-            bottom: 53px;
+            bottom: 49px;
           }
 
           > svg {
@@ -303,7 +306,7 @@
                 content: "";
                 display: block;
                 position: absolute;
-                bottom: 6px;
+                bottom: 7px;
                 left: 6px;
                 z-index: -1;
                 height: 40px;

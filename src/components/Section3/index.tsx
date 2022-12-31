@@ -116,11 +116,26 @@ const teamAvatars = [
 ];
 
 const backers = [
-  "a16z",
-  "animaco brand",
-  "Ycombinator",
-  "binance labs",
-  "binance labs",
+  {
+    label: "a16z",
+    link: "https://www.google.com",
+  },
+  {
+    label: "animaco brand",
+    link: "https://www.google.com",
+  },
+  {
+    label: "Ycombinator",
+    link: "https://www.google.com",
+  },
+  {
+    label: "binance labs",
+    link: "https://www.google.com",
+  },
+  {
+    label: "binance labs",
+    link: "https://www.google.com",
+  },
 ];
 
 export default function Section3() {
@@ -309,7 +324,9 @@ export default function Section3() {
           </p>
           <div>
             {backers.map((item, index) => (
-              <div key={index}>{item}</div>
+              <a key={index} href={item.link}>
+                {item.label}
+              </a>
             ))}
           </div>
         </div>
