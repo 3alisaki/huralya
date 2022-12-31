@@ -225,10 +225,13 @@
               background-color: transparent;
               border: none;
               padding: 0;
-              cursor: pointer;
               user-select: none;
               position: relative;
               z-index: 0;
+
+              &:not(:disabled) {
+                cursor: pointer;
+              }
 
               > svg {
                 height: 22px;

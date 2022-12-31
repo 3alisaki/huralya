@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-import { useState } from "react";
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { ReactComponent as TelegramIcon } from "../../assets/images/Section3/telegram.svg";
 import { ReactComponent as TwitterIcon } from "../../assets/images/Section3/twitter.svg";
@@ -26,7 +26,6 @@ import { ReactComponent as CoinDeskLogo } from "../../assets/images/Section3/coi
 import { ReactComponent as CoinMarketCapLogo } from "../../assets/images/Section3/coinMarketCap.svg";
 import { ReactComponent as GameRantLogo } from "../../assets/images/Section3/gameRant.svg";
 
-const roadmapStepsVisableItemCount = 5;
 const roadmapSteps = [
   {
     label: "dev & designe",
@@ -169,6 +168,41 @@ export default function Section3() {
   const [roadmapCurrentStepIndex, setRoadmapCurrentStepIndex] = useState(0);
   const [roadmapCurrentOffset, setRoadmapCurrentOffset] = useState(0);
 
+  const roadmapContainerRef = useRef<HTMLDivElement | null>(null);
+  const calculateRoadmapStepsVisableItemCount = useCallback(() => {
+    const roadmapContainerWidth = roadmapContainerRef.current?.clientWidth || 0;
+    return Math.min(
+      roadmapSteps.length,
+      Math.floor(roadmapContainerWidth / (window.innerWidth > 1350 ? 125 : 90))
+    );
+  }, []);
+  const [roadmapStepsVisableItemCount, setRoadmapStepsVisableItemCount] =
+    useState(calculateRoadmapStepsVisableItemCount());
+
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      const newVisableItemCount = calculateRoadmapStepsVisableItemCount();
+      setRoadmapStepsVisableItemCount(newVisableItemCount);
+
+      if (
+        roadmapCurrentStepIndex >=
+        roadmapCurrentOffset + newVisableItemCount
+      ) {
+        setRoadmapCurrentOffset(
+          roadmapCurrentStepIndex - (newVisableItemCount - 1)
+        );
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [
+    calculateRoadmapStepsVisableItemCount,
+    roadmapCurrentOffset,
+    roadmapCurrentStepIndex,
+  ]);
+
   const [teamAvatarsCurrentPageIndex, setTeamAvatarsCurrentPageIndex] =
     useState(0);
 
@@ -218,7 +252,7 @@ export default function Section3() {
           <div>Roadmap</div>
         </div>
         <div>
-          <div className={styles.Switch}>
+          <div className={styles.Switch} ref={roadmapContainerRef}>
             <div className={styles.Icons}>
               {roadmapSteps.map(
                 ({ icon, label }, index) =>
