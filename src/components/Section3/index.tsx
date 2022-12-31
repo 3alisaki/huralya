@@ -184,6 +184,10 @@ export default function Section3() {
       const newVisableItemCount = calculateRoadmapStepsVisableItemCount();
       setRoadmapStepsVisableItemCount(newVisableItemCount);
 
+      if (roadmapSteps.length - roadmapCurrentOffset < newVisableItemCount) {
+        setRoadmapCurrentOffset(roadmapSteps.length - newVisableItemCount);
+      }
+
       if (
         roadmapCurrentStepIndex >=
         roadmapCurrentOffset + newVisableItemCount
