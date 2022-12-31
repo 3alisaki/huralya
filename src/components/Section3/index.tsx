@@ -26,8 +26,28 @@ import { ReactComponent as CoinDeskLogo } from "../../assets/images/Section3/coi
 import { ReactComponent as CoinMarketCapLogo } from "../../assets/images/Section3/coinMarketCap.svg";
 import { ReactComponent as GameRantLogo } from "../../assets/images/Section3/gameRant.svg";
 
-const roadmapStepsPageSize = 5;
+const roadmapStepsVisableItemCount = 5;
 const roadmapSteps = [
+  {
+    label: "dev & designe",
+    icon: <OneIcon />,
+  },
+  {
+    label: "Beta Version",
+    icon: <TwoIcon />,
+  },
+  {
+    label: "cex listing",
+    icon: <ThreeIcon />,
+  },
+  {
+    label: "Stream",
+    icon: <FourIcon />,
+  },
+  {
+    label: "Moons",
+    icon: <FiveIcon />,
+  },
   {
     label: "dev & designe",
     icon: <OneIcon />,
@@ -147,9 +167,7 @@ export default function Section3() {
   });
 
   const [roadmapCurrentStepIndex, setRoadmapCurrentStepIndex] = useState(0);
-  const [roadmapDots, setRoadmapDots] = useState(
-    roadmapSteps.map((_, index) => ({ belongsTo: index }))
-  );
+  const [roadmapCurrentOffset, setRoadmapCurrentOffset] = useState(0);
 
   const [teamAvatarsCurrentPageIndex, setTeamAvatarsCurrentPageIndex] =
     useState(0);
@@ -202,77 +220,93 @@ export default function Section3() {
         <div>
           <div className={styles.Switch}>
             <div className={styles.Icons}>
-              {roadmapSteps.map(({ icon, label }, index) => (
-                <div key={index}>
-                  <button
-                    disabled={index === roadmapCurrentStepIndex}
-                    onClick={() => {
-                      setRoadmapDots((roadmapDots) => {
-                        const newDots = [...roadmapDots];
-                        const thisItemDotIndex = roadmapDots.findIndex(
-                          ({ belongsTo }) => belongsTo === index
-                        );
-                        newDots[0] = roadmapDots[thisItemDotIndex];
-                        newDots[thisItemDotIndex] = roadmapDots[0];
-                        return newDots;
-                      });
-
-                      setRoadmapCurrentStepIndex(index);
-                    }}
-                  >
-                    {icon}
-                    <div>{label}</div>
-                  </button>
-                </div>
-              ))}
+              {roadmapSteps.map(
+                ({ icon, label }, index) =>
+                  index >= roadmapCurrentOffset &&
+                  index <
+                    roadmapCurrentOffset + roadmapStepsVisableItemCount && (
+                    <div key={index}>
+                      <button
+                        data-visited={index < roadmapCurrentStepIndex}
+                        disabled={index === roadmapCurrentStepIndex}
+                        onClick={() => {
+                          setRoadmapCurrentStepIndex(index);
+                        }}
+                      >
+                        {icon}
+                        <div>{label}</div>
+                      </button>
+                    </div>
+                  )
+              )}
             </div>
             <div className={styles.CurrentStepBorder}>
               <div
                 style={{
                   left: `${
-                    (roadmapCurrentStepIndex / roadmapStepsPageSize) * 100
+                    ((roadmapCurrentStepIndex - roadmapCurrentOffset) /
+                      roadmapStepsVisableItemCount) *
+                    100
                   }%`,
-                  width: `${(1 / roadmapStepsPageSize) * 100}%`,
+                  width: `${(1 / roadmapStepsVisableItemCount) * 100}%`,
                 }}
               >
                 <CurrentStepBorder />
               </div>
             </div>
             <div className={styles.Line}>
-              {roadmapDots.map(({ belongsTo }, index) => (
-                <div
-                  key={index}
-                  data-current={index === 0}
-                  style={{
-                    left: `${(belongsTo / roadmapStepsPageSize) * 100}%`,
-                    width: `${(1 / roadmapStepsPageSize) * 100}%`,
-                  }}
-                >
-                  <div />
-                </div>
-              ))}
+              {roadmapSteps.map(
+                (_, index) =>
+                  index >= roadmapCurrentOffset &&
+                  index <
+                    roadmapCurrentOffset + roadmapStepsVisableItemCount && (
+                    <div
+                      key={index}
+                      data-visited={index < roadmapCurrentStepIndex}
+                      data-current={index === roadmapCurrentStepIndex}
+                      style={{
+                        left: `${
+                          ((index - roadmapCurrentOffset) /
+                            roadmapStepsVisableItemCount) *
+                          100
+                        }%`,
+                        width: `${(1 / roadmapStepsVisableItemCount) * 100}%`,
+                      }}
+                    >
+                      <div />
+                    </div>
+                  )
+              )}
             </div>
           </div>
           <div className={styles.Arrows}>
             <button
-              disabled={otherPlatformsCurrentPageIndex === 0}
+              disabled={roadmapCurrentStepIndex === 0}
               onClick={() => {
-                setOtherPlatformsCurrentPageIndex(
-                  otherPlatformsCurrentPageIndex - 1
-                );
+                const newIndex = roadmapCurrentStepIndex - 1;
+                setRoadmapCurrentStepIndex(newIndex);
+
+                if (newIndex < roadmapCurrentOffset) {
+                  setRoadmapCurrentOffset(newIndex);
+                }
               }}
             >
               <BackIcon />
             </button>
             <button
-              disabled={
-                otherPlatformsCurrentPageIndex + 1 ===
-                Math.ceil(otherPlatforms.length / otherPlatformsPageSize)
-              }
+              disabled={roadmapCurrentStepIndex + 1 === roadmapSteps.length}
               onClick={() => {
-                setOtherPlatformsCurrentPageIndex(
-                  otherPlatformsCurrentPageIndex + 1
-                );
+                const newIndex = roadmapCurrentStepIndex + 1;
+                setRoadmapCurrentStepIndex(newIndex);
+
+                if (
+                  newIndex >=
+                  roadmapCurrentOffset + roadmapStepsVisableItemCount
+                ) {
+                  setRoadmapCurrentOffset(
+                    newIndex - (roadmapStepsVisableItemCount - 1)
+                  );
+                }
               }}
             >
               <NextIcon />
