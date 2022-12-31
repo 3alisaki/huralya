@@ -5,6 +5,8 @@ import { ReactComponent as CardBG } from "../../assets/images/Section4/cardBG.sv
 import AvatarSrc from "../../assets/images/Section4/avatar.png";
 import { ReactComponent as AvatarBG } from "../../assets/images/Section4/avatarBG.svg";
 import { ReactComponent as InfoIcon } from "../../assets/icons/info.svg";
+import { ReactComponent as RIcon } from "../../assets/images/Section4/r.svg"
+import { ReactComponent as OpenSeaIcon } from "../../assets/images/Section4/openSea.svg"
 
 const information = [
   {
@@ -233,7 +235,14 @@ export default function Section4() {
                   <h3>contract Address</h3>
                   <div>0x60e...a7c6</div>
                 </div>
-                <div className={styles.Icons}></div>
+                <div className={styles.Icons}>
+                  <a href="https://www.google.com">
+                    <RIcon />
+                  </a>
+                  <a href="https://www.google.com">
+                    <OpenSeaIcon />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

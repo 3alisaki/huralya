@@ -202,10 +202,10 @@
           flex-direction: column;
           gap: 20px;
           box-sizing: border-box;
-          padding: 10px 20px 20px;
+          padding: 10px 20px;
 
           @media (max-width: 1350px) {
-            padding: 8px 15px 15px;
+            padding: 8px 15px;
           }
 
           .Avatar {
@@ -307,10 +307,10 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            padding: 0 20px 20px;
+            padding: 0 20px;
 
             @media (max-width: 1350px) {
-              padding: 0 15px 15px;
+              padding: 0 15px;
             }
 
             .Detail {
@@ -338,6 +338,29 @@
 
                 @media (max-width: 1350px) {
                   font-size: 11px;
+                }
+              }
+            }
+
+            .Icons {
+              display: flex;
+              flex-direction: row;
+              gap: 5px;
+              align-items: center;
+              justify-content: flex-end;
+              margin-right: -15px;
+
+              > a {
+                display: flex;
+
+                > svg {
+                  width: 30px;
+                  height: 30px;
+
+                  @media (max-width: 1350px) {
+                    width: 22px;
+                    height: 22px;
+                  }
                 }
               }
             }
