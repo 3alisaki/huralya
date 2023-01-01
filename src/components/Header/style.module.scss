@@ -54,7 +54,7 @@
             z-index: 0;
             top: 0;
             left: 122px;
-            transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
+            transition: top 1s ease-in-out, left 1s ease-in-out;
           }
 
           @media (max-width: 1350px) {
@@ -83,7 +83,7 @@
       align-items: center;
 
       .Menu {
-        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 
         @media (max-width: 1350px) {
           position: absolute;
