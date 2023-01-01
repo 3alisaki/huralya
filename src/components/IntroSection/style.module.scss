@@ -54,7 +54,7 @@
     .Buttons {
       position: relative;
       z-index: 0;
-      
+
       @media (max-width: 1350px) {
         display: flex;
         flex-direction: column-reverse;
@@ -142,7 +142,7 @@
         }
       }
 
-      .GenesisButtonContainer {
+      .SecondContainer {
         @media (min-width: 1351px) {
           position: absolute;
           margin-top: -47px;
@@ -150,29 +150,21 @@
           z-index: 0;
         }
 
-        > a {
+        > div {
           height: 94px;
           width: 475px;
           display: flex;
           flex-direction: row;
-          gap: 15px;
-          justify-content: center;
-          align-items: center;
-          transition: background-color 0.3s ease-in;
-          background-color: #ffffff;
-          color: #000000;
-          fill: #262626;
-          text-decoration: none;
-          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          text-decoration: none;
+          gap: 5px;
           position: relative;
+          z-index: 0;
 
           @media (max-width: 1350px) {
             height: 80px;
             width: 100%;
           }
 
-          > svg:first-child {
+          > svg {
             position: absolute;
             z-index: -1;
             top: 10px;
@@ -186,15 +178,28 @@
             }
           }
 
-          > div {
+          > a {
+            flex: 1;
             display: flex;
-            flex-direction: column;
-            gap: 5px;
-            font-family: "Aldrich";
-            transition: padding-top 0.3s ease-in;
-            padding-top: 5px;
+            flex-direction: row;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease-in;
+            background-color: #ffffff;
+            color: #000000;
+            fill: #262626;
+            text-decoration: none;
 
-            > div:first-child {
+            @media (max-width: 1350px) {
+              gap: 10px;
+            }
+
+            > div {
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+              font-family: "Aldrich";
               font-size: 20px;
               transition: all 0.3s ease-in;
 
@@ -203,40 +208,24 @@
               }
             }
 
-            > div:last-child {
-              font-size: 13px;
-              transition: all 0.3s ease-in;
-              color: #9298a5;
+            > svg:last-child {
+              transition: fill 0.3s ease-in;
+              height: 30px;
+              width: 30px;
 
               @media (max-width: 1350px) {
-                font-size: 10px;
+                height: 24px;
               }
             }
-          }
 
-          > svg:last-child {
-            transition: fill 0.3s ease-in;
-            height: 27px;
-            width: auto;
+            &:hover {
+              background-color: #000000;
+              fill: #ffffff;
+              color: #ffffff;
+              text-decoration: underline 1px;
 
-            @media (max-width: 1350px) {
-              height: 24px;
-            }
-          }
-
-          &:hover {
-            background-color: #000000;
-            fill: #ffffff;
-            color: #ffffff;
-            text-shadow: none;
-            text-decoration: underline;
-            text-decoration-thickness: 1px;
-
-            > div {
-              padding-top: 0;
-
-              > div:last-child {
-                color: #9298a5;
+              > div {
+                padding-bottom: 5px;
               }
             }
           }

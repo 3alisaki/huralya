@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import CharactersImageSrc from "../../assets/images/IntroSection/characters.png";
 import MouseImageSrc from "../../assets/images/IntroSection/mouse.gif";
 import { ReactComponent as AppButtonBG } from "../../assets/images/IntroSection/appButtonBG.svg";
-import { ReactComponent as GenesisButtonBG } from "../../assets/images/IntroSection/genesisButtonBG.svg";
+import { ReactComponent as SecondBG } from "../../assets/images/IntroSection/secondBG.svg";
 import { ReactComponent as AppleIcon } from "../../assets/icons/apple.svg";
 import { ReactComponent as AndroidIcon } from "../../assets/icons/android.svg";
-import { ReactComponent as ThreeDIcon } from "../../assets/icons/3d.svg";
+import { ReactComponent as PlayIcon } from "../../assets/icons/play.svg";
 
 export default function IntroSection() {
   const [hideMouseImage, setHideMouseImage] = useState(false);
@@ -54,26 +54,29 @@ export default function IntroSection() {
             </div>
             <div className={styles.TryMessage}>TRY FREE</div>
           </div>
-          <div className={styles.GenesisButtonContainer}>
-            <a
-              href="https://island3d.vercel.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GenesisButtonBG />
-              <div>
-                <div>Explore the genesis</div>
-                <div>The first creation of Huralya</div>
-              </div>
-              <ThreeDIcon />
-            </a>
+          <div className={styles.SecondContainer}>
+            <div>
+              <SecondBG />
+              <a href="https://www.google.com">
+                <div>White paper</div>
+              </a>
+              <a
+                href="https://island3d.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div>Trailer</div>
+                <PlayIcon />
+              </a>
+            </div>
           </div>
         </div>
-        <div
-          className={styles.MouseImage}
-        >
-          <img src={MouseImageSrc} alt="Mouse" 
-          style={{ opacity: hideMouseImage ? 0 : 1 }} />
+        <div className={styles.MouseImage}>
+          <img
+            src={MouseImageSrc}
+            alt="Mouse"
+            style={{ opacity: hideMouseImage ? 0 : 1 }}
+          />
         </div>
       </div>
     </div>
