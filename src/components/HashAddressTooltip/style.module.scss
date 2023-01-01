@@ -1,6 +1,6 @@
 .HashAddressTooltip {
   z-index: 9;
-  width: 300px;
+  width: 310px;
 
   &[data-static-side="top"]::before,
   &[data-static-side="bottom"]::after {
@@ -24,7 +24,9 @@
     border-radius: 16px;
     box-sizing: border-box;
     padding: 6px;
+    font-family: "Poppins";
     font-size: 12px;
+    font-weight: normal;
     display: flex;
     flex-direction: row;
     align-items: center;

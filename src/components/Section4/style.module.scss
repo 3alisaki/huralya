@@ -151,6 +151,16 @@
               font-size: 12px;
               color: #fdf9f9;
             }
+
+            &:hover {
+              .Title {
+                font-size: 21px;
+              }
+  
+              .Description {
+                font-size: 13px;
+              }
+            }
           }
         }
       }
