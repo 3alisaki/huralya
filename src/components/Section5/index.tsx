@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-import { Fragment, useState } from "react";
+import { Fragment, useCallback, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { ReactComponent as TradeIcon } from "../../assets/icons/trade.svg";
 import { ReactComponent as DocumentIcon } from "../../assets/icons/document.svg";
@@ -48,6 +48,30 @@ export default function Section5() {
     steps.map((_, index) => ({ belongsTo: index }))
   );
 
+  const handleSelectStep = useCallback((stepIndex: number) => {
+    setDots((dots) => {
+      const newDots = [...dots];
+      const thisItemDotIndex = dots.findIndex(
+        ({ belongsTo }) => belongsTo === stepIndex
+      );
+      newDots[0] = dots[thisItemDotIndex];
+      newDots[thisItemDotIndex] = dots[0];
+      return newDots;
+    });
+
+    setCurrentStepIndex(stepIndex);
+  }, []);
+
+  useEffect(() => {
+    const interval = setTimeout(() => {
+      let nextItemIndex =
+        currentStepIndex + 1 === steps.length ? 0 : currentStepIndex + 1;
+      handleSelectStep(nextItemIndex);
+    }, 10000);
+
+    return () => clearTimeout(interval);
+  }, [currentStepIndex, handleSelectStep]);
+
   return (
     <div
       id="LyaToken"
@@ -72,19 +96,7 @@ export default function Section5() {
               <div key={index}>
                 <button
                   disabled={index === currentStepIndex}
-                  onClick={() => {
-                    setDots((dots) => {
-                      const newDots = [...dots];
-                      const thisItemDotIndex = dots.findIndex(
-                        ({ belongsTo }) => belongsTo === index
-                      );
-                      newDots[0] = dots[thisItemDotIndex];
-                      newDots[thisItemDotIndex] = dots[0];
-                      return newDots;
-                    });
-
-                    setCurrentStepIndex(index);
-                  }}
+                  onClick={() => handleSelectStep(index)}
                 >
                   {icon}
                   <div>{title}</div>
@@ -119,10 +131,7 @@ export default function Section5() {
         </div>
         <div className={styles.ContentContainer}>
           {steps.map(({ title, desctiption }, index) => (
-            <div
-              key={index}
-              data-current={index === currentStepIndex}
-            >
+            <div key={index} data-current={index === currentStepIndex}>
               <h2>{title}</h2>
               <p>
                 {desctiption.map((line, index) => (

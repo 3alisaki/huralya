@@ -15,7 +15,6 @@ import {
 } from "@floating-ui/react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { ReactComponent as CopyIcon } from "../../assets/icons/copy.svg";
-import { ReactComponent as MetaMaskFoxIcon } from "../../assets/icons/metaMaskFox.svg";
 
 interface HashAddressTooltipProps {
   hashAddress: string;
@@ -98,7 +97,6 @@ export default function HashAddressTooltip({
               <CopyToClipboard text={hashAddress}>
                 <CopyIcon className={styles.CopyIcon} />
               </CopyToClipboard>
-              <MetaMaskFoxIcon className={styles.MetaMaskFoxIcon} />
             </div>
             <div
               ref={arrowRef}

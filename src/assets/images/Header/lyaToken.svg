@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
-  <defs>
-    <linearGradient id="lyaTokenLinearGradient" x1="11" x2="-2.009" y1="-4" y2="-.328" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#BC68FE"/>
-      <stop offset="1" stop-color="#6F31D6"/>
-    </linearGradient>
-  </defs>
-  <path fill="url(#lyaTokenLinearGradient)" d="M7.5 0a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15Zm-.243 12.924-2.716-5.38 2.716.611v4.77Zm0-5.38-2.642-.596 2.642-4.895v5.491Zm.471 5.38V8.155l2.672-.5-2.672 5.27Zm0-5.372V2.046l2.709 4.998-2.709.508Z"/>
-</svg>

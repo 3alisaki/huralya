@@ -1,4 +1,5 @@
 import styles from "./style.module.scss";
+import { useEffect, useState } from "react";
 import CharactersImageSrc from "../../assets/images/IntroSection/characters.png";
 import MouseImageSrc from "../../assets/images/IntroSection/mouse.gif";
 import { ReactComponent as AppButtonBG } from "../../assets/images/IntroSection/appButtonBG.svg";
@@ -8,6 +9,21 @@ import { ReactComponent as AndroidIcon } from "../../assets/icons/android.svg";
 import { ReactComponent as ThreeDIcon } from "../../assets/icons/3d.svg";
 
 export default function IntroSection() {
+  const [hideMouseImage, setHideMouseImage] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setHideMouseImage(window.scrollY >= window.innerHeight / 3);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  });
+
   return (
     <div className={styles.IntroSection}>
       <div>
@@ -53,8 +69,11 @@ export default function IntroSection() {
             </a>
           </div>
         </div>
-        <div className={styles.MouseImage}>
-          <img src={MouseImageSrc} alt="Mouse" />
+        <div
+          className={styles.MouseImage}
+        >
+          <img src={MouseImageSrc} alt="Mouse" 
+          style={{ opacity: hideMouseImage ? 0 : 1 }} />
         </div>
       </div>
     </div>

@@ -3,11 +3,6 @@ import { useEffect, useState } from "react";
 import { ReactComponent as Logo } from "../../assets/images/Header/logo.svg";
 import { ReactComponent as Huralya } from "../../assets/images/Header/huralya.svg";
 import { ReactComponent as LoginIcon } from "../../assets/icons/login.svg";
-import { ReactComponent as WhitePaperIcon } from "../../assets/images/Header/whitePaper.svg";
-import { ReactComponent as GenesisIcon } from "../../assets/images/Header/genesis.svg";
-import { ReactComponent as AboutUsIcon } from "../../assets/images/Header/aboutUs.svg";
-import { ReactComponent as InsigniaNFTIcon } from "../../assets/images/Header/insigniaNFT.svg";
-import { ReactComponent as LyaTokenIcon } from "../../assets/images/Header/lyaToken.svg";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(window.scrollY !== 0);
@@ -43,34 +38,19 @@ export default function Header() {
                   <a href="https://www.google.com">blog</a>
                 </li>
                 <li>
-                  <a href="https://www.google.com">
-                    <WhitePaperIcon />
-                    White paper
-                  </a>
+                  <a href="https://www.google.com">White paper</a>
                 </li>
                 <li>
-                  <a href="https://www.google.com">
-                    <GenesisIcon />
-                    GENESIS
-                  </a>
+                  <a href="https://www.google.com">GENESIS</a>
                 </li>
                 <li>
-                  <a href="#AboutUs">
-                    <AboutUsIcon />
-                    About us
-                  </a>
+                  <a href="#AboutUs">About us</a>
                 </li>
                 <li>
-                  <a href="#InsigniaNFT">
-                    <InsigniaNFTIcon />
-                    Insignia NFT
-                  </a>
+                  <a href="#InsigniaNFT">Insignia NFT</a>
                 </li>
                 <li>
-                  <a href="#LyaToken">
-                    <LyaTokenIcon />
-                    LYA TOKEN
-                  </a>
+                  <a href="#LyaToken">LYA TOKEN</a>
                 </li>
               </ul>
             </nav>

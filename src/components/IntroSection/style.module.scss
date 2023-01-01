@@ -267,6 +267,7 @@
         height: 100%;
         object-fit: fill;
         mix-blend-mode: lighten;
+        transition: opacity 0.3s ease-in-out;
       }
     }
   }
