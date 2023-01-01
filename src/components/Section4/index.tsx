@@ -5,8 +5,8 @@ import { ReactComponent as CardBG } from "../../assets/images/Section4/cardBG.sv
 import AvatarSrc from "../../assets/images/Section4/avatar.png";
 import { ReactComponent as AvatarBG } from "../../assets/images/Section4/avatarBG.svg";
 import { ReactComponent as InfoIcon } from "../../assets/icons/info.svg";
-import { ReactComponent as RIcon } from "../../assets/images/Section4/r.svg"
-import { ReactComponent as OpenSeaIcon } from "../../assets/images/Section4/openSea.svg"
+import { ReactComponent as RIcon } from "../../assets/images/Section4/r.svg";
+import { ReactComponent as OpenSeaIcon } from "../../assets/images/Section4/openSea.svg";
 
 const information = [
   {
@@ -169,9 +169,7 @@ export default function Section4() {
       <div>
         <div>
           <h1>Smart Investment...</h1>
-          <div>
-            Squirrel NFTs are a way to invest on Huralya
-          </div>
+          <div>Squirrel NFTs are a way to invest on Huralya</div>
         </div>
         <div>
           <div>
@@ -207,8 +205,8 @@ export default function Section4() {
               </div>
               <div className={styles.Actions}>
                 <div>
-                  <button>Mint</button>
-                  <button>Market place</button>
+                  <a href="https://www.google.com">Mint</a>
+                  <a href="https://www.google.com">Market place</a>
                 </div>
                 <div>
                   <InfoIcon /> Upcoming MINT on Mars-21-2023

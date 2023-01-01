@@ -140,9 +140,9 @@ export default function Section5() {
         <div className={styles.Exchanges}>
           <h2>Exchanges</h2>
           <div>
-            <div>Mexc</div>
-            <div>uniswap</div>
-            <div>Pancakeswap</div>
+            <a href="https://www.google.com">Mexc</a>
+            <a href="https://www.google.com">uniswap</a>
+            <a href="https://www.google.com">Pancakeswap</a>
           </div>
         </div>
         <div className={styles.ContractAddress}>

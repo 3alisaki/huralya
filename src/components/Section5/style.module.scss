@@ -404,7 +404,7 @@
         flex-direction: row;
         gap: 10px;
 
-        > div {
+        > a {
           flex: 1;
           font-family: "Alatsi";
           font-size: 14px;
@@ -417,6 +417,7 @@
           box-sizing: border-box;
           border: 1px solid #fddfc1;
           padding: 0 10px;
+          text-decoration: none;
         }
       }
     }
