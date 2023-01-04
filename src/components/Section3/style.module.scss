@@ -486,7 +486,7 @@
       justify-content: flex-end;
 
       &::before {
-        $size: 800px;
+        $size: 1200px;
 
         content: "";
         display: block;
@@ -532,11 +532,11 @@
 
       > div:nth-child(2) {
         margin: 25px 0 10px;
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 82px 82px 82px;
         gap: 10px;
         align-items: center;
-        flex-wrap: wrap;
+        justify-content: space-between;
 
         @media (max-width: 1350px) {
           margin-bottom: 20px;

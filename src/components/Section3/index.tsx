@@ -121,7 +121,6 @@ const otherPlatforms = [
   },
 ];
 
-const teamAvatarsPageSize = 3;
 const teamAvatars = [
   Avatar1Src,
   Avatar2Src,
@@ -129,6 +128,12 @@ const teamAvatars = [
   Avatar3Src,
   Avatar1Src,
   Avatar2Src,
+  Avatar2Src,
+  Avatar1Src,
+  Avatar3Src,
+  Avatar1Src,
+  Avatar2Src,
+  Avatar3Src,
   Avatar1Src,
   Avatar2Src,
   Avatar3Src,
@@ -179,23 +184,36 @@ export default function Section3() {
   const [roadmapStepsVisableItemCount, setRoadmapStepsVisableItemCount] =
     useState(calculateRoadmapStepsVisableItemCount());
 
+  const [teamAvatarsPageOffset, setTeamAvatarsPageOffset] = useState(0);
+  const [teamAvatarsVisableItemCount, setTeamAvatarsVisableItemCount] =
+    useState(window.innerWidth > 1350 ? 6 : 3);
+
   useLayoutEffect(() => {
     const handleResize = () => {
-      const newVisableItemCount = calculateRoadmapStepsVisableItemCount();
-      setRoadmapStepsVisableItemCount(newVisableItemCount);
+      const newRoadmapStepsVisableItemCount =
+        calculateRoadmapStepsVisableItemCount();
+      setRoadmapStepsVisableItemCount(newRoadmapStepsVisableItemCount);
 
-      if (roadmapSteps.length - roadmapCurrentOffset < newVisableItemCount) {
-        setRoadmapCurrentOffset(roadmapSteps.length - newVisableItemCount);
+      if (
+        roadmapSteps.length - roadmapCurrentOffset <
+        newRoadmapStepsVisableItemCount
+      ) {
+        setRoadmapCurrentOffset(
+          roadmapSteps.length - newRoadmapStepsVisableItemCount
+        );
       }
 
       if (
         roadmapCurrentStepIndex >=
-        roadmapCurrentOffset + newVisableItemCount
+        roadmapCurrentOffset + newRoadmapStepsVisableItemCount
       ) {
         setRoadmapCurrentOffset(
-          roadmapCurrentStepIndex - (newVisableItemCount - 1)
+          roadmapCurrentStepIndex - (newRoadmapStepsVisableItemCount - 1)
         );
       }
+
+      const newTeamAvatarsVisableItemCount = window.innerWidth > 1350 ? 6 : 3;
+      setTeamAvatarsVisableItemCount(newTeamAvatarsVisableItemCount);
     };
 
     handleResize();
@@ -205,10 +223,8 @@ export default function Section3() {
     calculateRoadmapStepsVisableItemCount,
     roadmapCurrentOffset,
     roadmapCurrentStepIndex,
+    teamAvatarsPageOffset,
   ]);
-
-  const [teamAvatarsCurrentPageIndex, setTeamAvatarsCurrentPageIndex] =
-    useState(0);
 
   const [otherPlatformsCurrentPageIndex, setOtherPlatformsCurrentPageIndex] =
     useState(0);
@@ -361,28 +377,35 @@ export default function Section3() {
           <div>
             {teamAvatars.map(
               (item, index) =>
-                index >= teamAvatarsCurrentPageIndex * teamAvatarsPageSize &&
-                index <
-                  teamAvatarsCurrentPageIndex * teamAvatarsPageSize +
-                    teamAvatarsPageSize && <img src={item} key={index} alt="" />
+                index >= teamAvatarsPageOffset &&
+                index < teamAvatarsPageOffset + teamAvatarsVisableItemCount && (
+                  <img src={item} key={index} alt="" />
+                )
             )}
           </div>
           <div className={styles.Arrows}>
             <button
-              disabled={teamAvatarsCurrentPageIndex === 0}
+              disabled={teamAvatarsPageOffset === 0}
               onClick={() => {
-                setTeamAvatarsCurrentPageIndex(teamAvatarsCurrentPageIndex - 1);
+                setTeamAvatarsPageOffset(
+                  Math.max(
+                    0,
+                    teamAvatarsPageOffset - teamAvatarsVisableItemCount
+                  )
+                );
               }}
             >
               <BackIcon />
             </button>
             <button
               disabled={
-                teamAvatarsCurrentPageIndex + 1 ===
-                Math.ceil(teamAvatars.length / teamAvatarsPageSize)
+                teamAvatarsPageOffset + teamAvatarsVisableItemCount >=
+                teamAvatars.length
               }
               onClick={() => {
-                setTeamAvatarsCurrentPageIndex(teamAvatarsCurrentPageIndex + 1);
+                setTeamAvatarsPageOffset(
+                  teamAvatarsPageOffset + teamAvatarsVisableItemCount
+                );
               }}
             >
               <NextIcon />
