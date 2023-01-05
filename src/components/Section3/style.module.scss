@@ -10,6 +10,10 @@
   background-position: bottom -69px left -267px;
   background-size: auto 358px;
 
+  @media (min-width: 1351px) {
+    height: 800px;
+  }
+  
   @media (max-width: 1350px) {
     padding: 34px 25px 230px;
     grid-template-columns: 1fr auto;
